@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact German Platinum Watches for inquiries about our collection, private viewings, or customer service.">
+    <title>Contact Us - German Platinum Watches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>German Platinum Watches</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="Heritage.html" class="nav-link">Heritage</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="terms.html" class="nav-link">Terms</a></li>
+                <li><a href="privacy.html" class="nav-link">Privacy</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <section class="page-section">
+        <div class="container">
+            <div class="page-header">
+                <h1>Contact Us</h1>
+                <p class="last-updated">We are here to assist you. Reach out for inquiries or to schedule a private consultation.</p>
+            </div>
+
+            <div class="page-content">
+                <div class="page-item">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions about our timepieces, the ordering process, or after-sales service? Fill out the form below, and our dedicated concierge team will get back to you as soon as possible.</p>
+                </div>
+
+                <form class="newsletter-form" style="flex-direction: column; max-width: 100%;" onsubmit="submitContact(event)">
+                    <input type="text" id="contact-name" placeholder="Your Name" required class="newsletter-input">
+                    <input type="email" id="contact-email" placeholder="Your Email" required class="newsletter-input">
+                    <textarea id="contact-message-text" placeholder="Your Message" required class="newsletter-input" style="min-height: 150px; border-radius: 15px;"></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 25px;">Submit Message</button>
+                </form>
+                <p id="response-message" style="text-align: center; margin-top: 1rem; font-weight: bold;"></p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>German Platinum Watches</h3>
+                    <p>The pinnacle of German watchmaking and timeless luxury.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="Heritage.html">Heritage</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Collections</h4>
+                    <ul>
+                        <li>Dress Watches</li>
+                        <li>Chronographs</li>
+                        <li>Sports & Divers</li>
+                        <li>Limited Editions</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Follow us on social media for the latest news and releases.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 German Platinum Watches. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function submitContact(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message-text').value;
+            const responseMessage = document.getElementById('response-message');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name && emailPattern.test(email) && message) {
+                responseMessage.textContent = 'Thank you for your message! We’ll get back to you soon.';
+                responseMessage.style.color = '#34c759';
+                event.target.reset(); // Clear the form
+            } else {
+                responseMessage.textContent = 'Please fill out all fields with a valid email address.';
+                responseMessage.style.color = '#ff4d4d';
+            }
+        }
+    </script>
+</body>
+</html>
